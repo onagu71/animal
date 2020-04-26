@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@700&display=swap");
+
+body {
+    font-family: Malgun Gothic;
+}
+
+.upbar .language {
+    color: white;
+    text-align: right;
+    padding: 5px;
+}
+
+.upbar .language a {
+    font-size: 12px;
+    color: white;
+    padding: 5px;
+}
+
+.table {
+    font-size: 12px;
+}
+
+.month {
+    text-align: center;
+    font-size: 12px;
+    color: #AAAAAA;
+    box-shadow: 
+        1px 0 0 0 #222, 
+        0 1px 0 0 #222, 
+        1px 1px 0 0 #222,
+        1px 0 0 0 #222 inset, 
+        0 1px 0 0 #222 inset;
+}
+
+.month-active {
+    background-color: aqua;
+    color: black;
+    font-weight: bold;
+}
