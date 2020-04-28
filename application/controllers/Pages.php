@@ -9,18 +9,30 @@ class Pages extends CI_Controller {
         $this->load->model('Pages_model');
     }
 
-    public function view($page = 'home')
+    private function view($page = 'home', $data = null)
     {
         if(!file_exists(APPPATH.'views/pages/' . $page . '.php'))
         {
             show_404();
         }
 
-        $data['title'] = ucfirst($page);
-        $data['fishes'] = $this->Pages_model->getFishes();
-
         $this->load->view('templates/header', $data);
         $this->load->view('pages/'. $page, $data);
         $this->load->view('templates/footer', $data);
+    }
+
+    public function table($page = 'insect')
+    {
+        $data['fishes'] = $this->Pages_model->getFishes();
+        $data['title'] = '도감';
+        $data['scripts'][0] = 'sortButton';
+        $this->view($page, $data);
+    }
+
+    public function aa($page = 'getMonthCode')
+    {
+        $data['title'] = '도감';
+        $data['scripts'][0] = 'getMonth';
+        $this->view($page, $data);
     }
 }
