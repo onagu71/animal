@@ -15,7 +15,7 @@
         </div>
     </div>
     <div class="container">
-        <img class="home-logo" src="/img/bg/logo.png">
+        <img class="home-logo" src="/css/img/bg/logo.png">
     </div>
     <nav class="navbar navbar-expand-lg" style="background-color: #8EDEC1; opacity: 0.9;">
         <div class="container">
