@@ -24,6 +24,7 @@ class Pages extends CI_Controller {
     public function table($page = 'insect')
     {
         $data['fishes'] = $this->Pages_model->getFishes();
+        $data['insects'] = $this->Pages_model->getInsects();
         $data['title'] = '도감';
         $data['scripts'][0] = 'sortButton';
         $this->view($page, $data);

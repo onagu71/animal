@@ -1,4 +1,29 @@
 $(document).ready( function () {
+    
+    $(".btn-month").click(function() {
+        var value = $(this).val().toLowerCase();
+        if (value == 'all') {
+            $("#fish-table tbody tr").filter(function() {
+                $(this).show();
+            });
+        } else {
+            $("#fish-table tbody tr").filter(function() {
+                $(this).hide();
+                if($(this).find('.month-' + value).hasClass('month-active')) {
+                    $(this).show();
+                }
+            });
+        }
+        
+    });
+    
+    $("#serch").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#fish-table tbody tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+
     $('#fish-table').DataTable({
         lengthChange: false,
         searching: false,
@@ -32,4 +57,5 @@ $(document).ready( function () {
             $(this).children('span').attr('class', 'fa fa-sort-up')
         }
     })
+
   });
